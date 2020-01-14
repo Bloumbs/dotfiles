@@ -1,13 +1,45 @@
+" Specify a directory for plugins
+    call plug#begin('~/.vim/plugged')
+
+    Plug 'scrooloose/nerdcommenter'
+    Plug 'ctrlpvim/ctrlp.vim'
+    Plug 'townk/vim-autoclose'
+
+" Initialize plugin system
+    call plug#end()
+
+" Create Ctrl-/ or Cmd-/ bind in iTerm to send "^^"
+    vmap ^^ <plug>NERDCommenterToggle
+    nmap ^^ <plug>NERDCommenterToggle
+
 " General Vim settings
 	syntax on
+    set noswapfile " << at your own risk
 	let mapleader=","
 	set autoindent
 	set tabstop=4
 	set shiftwidth=4
 	set dir=/tmp/
-	set relativenumber 
 	set number
+    set nowrap
+    set ai
+    set ruler
+    set expandtab
+    set whichwrap+=<,>,h,l,[,]
+    set statusline+=%F
 
+    augroup FastEscape
+        autocmd!
+        au InsertEnter * set timeoutlen=0
+        au InsertLeave * set timeoutlen=1000
+    augroup END
+
+" CtrlP open in new tab
+    let g:ctrlp_prompt_mappings = {
+        \ 'AcceptSelection("e")': ['<2-LeftMouse>'],
+        \ 'AcceptSelection("t")': ['<cr>'],
+        \ }
+                
 	autocmd Filetype html setlocal sw=2 expandtab
 	autocmd Filetype javascript setlocal sw=4 expandtab
 
@@ -15,10 +47,29 @@
 	hi Cursor ctermfg=White ctermbg=Yellow cterm=bold guifg=white guibg=yellow gui=bold
 
 	set hlsearch
-	nnoremap <C-l> :nohl<CR><C-l>:echo "Search Cleared"<CR>
-	nnoremap <C-c> :set norelativenumber<CR>:set nonumber<CR>:echo "Line numbers turned off."<CR>
-	nnoremap <C-n> :set relativenumber<CR>:set number<CR>:echo "Line numbers turned on."<CR>
 
+" Tab switching
+	nnoremap h gT
+	nnoremap l gt
+    "nnoremap <C-Left> gT<CR>
+    "nnoremap <C-Right> gt<CR>
+
+" Moving lines
+" Normal mode
+    nnoremap <C-j> :m .+1<CR>==
+    nnoremap <C-k> :m .-2<CR>==
+" Insert mode
+    inoremap <C-j> <ESC>:m .+1<CR>==gi
+    inoremap <C-k> <ESC>:m .-2<CR>==gi
+" Visual mode
+    vnoremap <C-j> :m '>+1<CR>gv=gv
+    vnoremap <C-k> :m '<-2<CR>gv=gv
+
+
+	" nnoremap <C-c> :set norelativenumber<CR>:set nonumber<CR>:echo "Line numbers turned off."<CR>
+	" nnoremap <C-n> :set relativenumber<CR>:set number<CR>:echo "Line numbers turned on."<CR>
+
+    tnoremap <Esc> <C-\><C-n>
 	nnoremap n nzzzv
 	nnoremap N Nzzzv
 
@@ -28,6 +79,8 @@
 	nnoremap K gg
 
 	map <tab> %
+
+    colorscheme monokain
 
 	set backspace=indent,eol,start
 
@@ -79,7 +132,7 @@
 	inoremap <leader>w <Esc>:w<CR>
 	nnoremap <leader>w :w<CR>
 
-	inoremap <leader>q <ESC>:q<CR>
+    inoremap <leader>q <ESC>:q<CR>
 	nnoremap <leader>q :q<CR>
 
 	inoremap <leader>x <ESC>:x<CR>
@@ -97,7 +150,7 @@
 			\ if line("'\"") > 0 && line("'\"") <= line("$") |
 			\	execute 'normal! g`"zvzz' |
 			\ endif
-	augroup END
+    augroup END
 
 " Auto load
 	" Triger `autoread` when files changes on disk

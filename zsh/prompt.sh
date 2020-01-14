@@ -6,34 +6,34 @@ setopt PROMPT_SUBST
 
 set_prompt() {
 
-	# [
-	PS1="%{$fg[white]%}[%{$reset_color%}"
+	# User
+	PS1="%{$fg[white]%}bloumbs%{$reset_color%}"
 
 	# Path: http://stevelosh.com/blog/2010/02/my-extravagant-zsh-prompt/
-	PS1+="%{$fg_bold[cyan]%}${PWD/#$HOME/~}%{$reset_color%}"
+	PS1+="%{$fg_bold[red]%} :: %{$reset_color%}%{$fg_bold[green]%}${PWD/#$HOME/~}%{$reset_color%}"
 
 	# Status Code
 	PS1+='%(?.., %{$fg[red]%}%?%{$reset_color%})'
 
 	# Git
 	if git rev-parse --is-inside-work-tree 2> /dev/null | grep -q 'true' ; then
-		PS1+=', '
-		PS1+="%{$fg[blue]%}$(git rev-parse --abbrev-ref HEAD 2> /dev/null)%{$reset_color%}"
+		PS1+=' '
+		PS1+="%{$fg[magenta]%}$(git rev-parse --abbrev-ref HEAD 2> /dev/null)%{$reset_color%}"
 		if [ $(git status --short | wc -l) -gt 0 ]; then 
-			PS1+="%{$fg[red]%}+$(git status --short | wc -l | awk '{$1=$1};1')%{$reset_color%}"
+			PS1+="%{$fg[cyan]%}+$(git status --short | wc -l | awk '{$1=$1};1')%{$reset_color%}"
 		fi
 	fi
 
 
 	# Timer: http://stackoverflow.com/questions/2704635/is-there-a-way-to-find-the-running-time-of-the-last-executed-command-in-the-shel
 	if [[ $_elapsed[-1] -ne 0 ]]; then
-		PS1+=', '
-		PS1+="%{$fg[magenta]%}$_elapsed[-1]s%{$reset_color%}"
+		PS1+=' '
+		PS1+="%{$fg[yellow]%}$_elapsed[-1]s%{$reset_color%}"
 	fi
 
 	# PID
 	if [[ $! -ne 0 ]]; then
-		PS1+=', '
+		PS1+=' '
 		PS1+="%{$fg[yellow]%}PID:$!%{$reset_color%}"
 	fi
 
@@ -41,11 +41,11 @@ set_prompt() {
 	CAN_I_RUN_SUDO=$(sudo -n uptime 2>&1|grep "load"|wc -l)
 	if [ ${CAN_I_RUN_SUDO} -gt 0 ]
 	then
-		PS1+=', '
+		PS1+=' '
 		PS1+="%{$fg_bold[red]%}SUDO%{$reset_color%}"
 	fi
 
-	PS1+="%{$fg[white]%}]: %{$reset_color%}% "
+	PS1+="%{$fg[white]%} : %{$reset_color%}"
 }
 
 precmd_functions+=set_prompt

@@ -1,3 +1,5 @@
+export PATH=~/.npm-global/bin:$PATH
+
 # Vars
 	HISTFILE=~/.zsh_history
 	SAVEHIST=1000 
@@ -7,16 +9,37 @@
 	git config --global push.default current
 
 # Aliases
-	alias v="vim -p"
+    alias v='vim -p'
 	mkdir -p /tmp/log
-	
-	# This is currently causing problems (fails when you run it anywhere that isn't a git project's root directory)
-	# alias vs="v `git status --porcelain | sed -ne 's/^ M //p'`"
+    alias cd..='cd ..'
+    alias ll='ls -alF'
+    alias lsa='ls -la'
+    alias la='ls -A'
+    alias ls='ls -CF'
+    alias cls='clear'
+    alias n='nano -m'
+    alias g++="g++-9"
+
+# Git aliases
+    alias ga='git add'
+    alias gaa='git add .'
+    alias gaaa='git add -A'
+    alias gc='git commit'
+    alias gcm='git commit -m'
+    alias gd='git diff'
+    alias gi='git init'
+    alias gl='git log'
+    alias gp='git pull'
+    alias gpsh='git push'
+    alias gss='git status -s'
+
+# This is currently causing problems (fails when you run it anywhere that isn't a git project's root directory)
+# alias vs="v `git status --porcelain | sed -ne 's/^ M //p'`"
 
 # Settings
 	export VISUAL=vim
 
-source ~/dotfiles/zsh/plugins/fixls.zsh
+    source ~/dotfiles/zsh/plugins/fixls.zsh
 
 #Functions
 	# Loop a command and show the output in vim
@@ -34,10 +57,10 @@ source ~/dotfiles/zsh/plugins/fixls.zsh
 
  	# Custom cd
  	c() {
- 		cd $1;
- 		ls;
+        cd $1;
+ 	  	ls;
  	}
- 	alias cd="c"
+ 	#alias cd="c"
 
 # For vim mappings: 
 	stty -ixon
@@ -84,3 +107,4 @@ fi
 
 source ~/dotfiles/zsh/prompt.sh
 export PATH=$PATH:$HOME/dotfiles/utils
+export PATH=$PATH:~/scripts
