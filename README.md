@@ -8,15 +8,12 @@
 
 ### vimrc.vim
 
-Colorscheme:
-
-- [monokain](https://github.com/flazz/vim-colorschemes/blob/master/colors/monokain.vim)
-
 Plugins:
 
 - ['scrooloose/nerdcommenter'](https://github.com/preservim/nerdcommenter)
 - ['ctrlpvim/ctrlp.vim'](https://github.com/ctrlpvim/ctrlp.vim)
 - ['townk/vim-autoclose'](https://github.com/Townk/vim-autoclose)
+- ['airblade/vim-gitgutter'](https://github.com/airblade/vim-gitgutter)
 
 General settings:
 
@@ -43,6 +40,14 @@ let g:ctrlp_prompt_mappings = {
 " Visual mode
     vnoremap <C-j> :m '>+1<CR>gv=gv
     vnoremap <C-k> :m '<-2<CR>gv=gv
+
+" Status line
+    set laststatus=2
+    set statusline+=%f
+    set statusline+=%=
+    set statusline+=%L
+    set statusline+=,
+    set statusline+=%l 
 ```
 
 ### zshrc.sh
