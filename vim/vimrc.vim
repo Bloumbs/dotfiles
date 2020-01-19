@@ -4,6 +4,9 @@
     Plug 'scrooloose/nerdcommenter'
     Plug 'ctrlpvim/ctrlp.vim'
     Plug 'townk/vim-autoclose'
+    Plug 'vim-python/python-syntax'
+    "Plug 'numirias/semshi', {'do': ':UpdateRemotePlugins'}
+    Plug 'airblade/vim-gitgutter'
 
 " Initialize plugin system
     call plug#end()
@@ -26,13 +29,27 @@
     set ruler
     set expandtab
     set whichwrap+=<,>,h,l,[,]
-    set statusline+=%F
+    set title
+    set ignorecase
+    set smartcase
 
+" Status line
+    set laststatus=2
+    set statusline+=%f
+    set statusline+=%=
+    set statusline+=%L
+    set statusline+=,
+    set statusline+=%l 
+    
+    colorscheme molokai
+    
     augroup FastEscape
         autocmd!
         au InsertEnter * set timeoutlen=0
         au InsertLeave * set timeoutlen=1000
     augroup END
+
+    :silent !echo -en "\033]0;%:t\a"
 
 " CtrlP open in new tab
     let g:ctrlp_prompt_mappings = {
@@ -65,7 +82,6 @@
     vnoremap <C-j> :m '>+1<CR>gv=gv
     vnoremap <C-k> :m '<-2<CR>gv=gv
 
-
 	" nnoremap <C-c> :set norelativenumber<CR>:set nonumber<CR>:echo "Line numbers turned off."<CR>
 	" nnoremap <C-n> :set relativenumber<CR>:set number<CR>:echo "Line numbers turned on."<CR>
 
@@ -80,7 +96,6 @@
 
 	map <tab> %
 
-    colorscheme monokain
 
 	set backspace=indent,eol,start
 
@@ -143,6 +158,10 @@
 	nnoremap <leader>v :vsplit<CR>:w<CR>:Ex<CR>
 	nnoremap <leader>s :split<CR>:w<CR>:Ex<CR>
 
+    nmap <c-s> :w<CR>
+    vmap <c-s> <Esc><c-s>gv
+    imap <c-s> <Esc><c-s>
+
 " Return to the same line you left off at
 	augroup line_return
 		au!
@@ -151,7 +170,7 @@
 			\	execute 'normal! g`"zvzz' |
 			\ endif
     augroup END
-
+    
 " Auto load
 	" Triger `autoread` when files changes on disk
 	" https://unix.stackexchange.com/questions/149209/refresh-changed-content-of-file-opened-in-vim/383044#383044
