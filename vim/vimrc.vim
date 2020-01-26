@@ -7,6 +7,8 @@
     Plug 'vim-python/python-syntax'
     "Plug 'numirias/semshi', {'do': ':UpdateRemotePlugins'}
     Plug 'airblade/vim-gitgutter'
+    Plug 'mxw/vim-jsx'
+    Plug 'pangloss/vim-javascript'
 
 " Initialize plugin system
     call plug#end()
