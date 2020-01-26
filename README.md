@@ -14,6 +14,8 @@ Plugins:
 - ['ctrlpvim/ctrlp.vim'](https://github.com/ctrlpvim/ctrlp.vim)
 - ['townk/vim-autoclose'](https://github.com/Townk/vim-autoclose)
 - ['airblade/vim-gitgutter'](https://github.com/airblade/vim-gitgutter)
+- ['mxw/vim-jsx'](https://github.com/mxw/vim-jsx)
+- ['pangloss/vim-javascript'](https://github.com/pangloss/vim-javascript)
 
 General settings:
 
