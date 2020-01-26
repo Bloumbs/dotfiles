@@ -79,6 +79,7 @@ Helpful aliases:
     alias gp='git pull'
     alias gpsh='git push'
     alias gss='git status -s'
+    alias gcnt='git ls-files | wc -l'
 ```
 
 ### tmux.conf
