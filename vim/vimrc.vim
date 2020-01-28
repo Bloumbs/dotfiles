@@ -37,7 +37,7 @@
 
 " Status line
     set laststatus=2
-    set statusline+=%f
+    set statusline+=%F
     set statusline+=%=
     set statusline+=%L
     set statusline+=,
