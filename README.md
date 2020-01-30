@@ -45,11 +45,14 @@ let g:ctrlp_prompt_mappings = {
 
 " Status line
     set laststatus=2
-    set statusline+=%f
+    set statusline+=\ %F
     set statusline+=%=
     set statusline+=%L
-    set statusline+=,
-    set statusline+=%l 
+    set statusline+=:
+    set statusline+=%l
+    set statusline+=:
+    set statusline+=%c
+    set statusline+=\ 
 ```
 
 ### zshrc.sh
