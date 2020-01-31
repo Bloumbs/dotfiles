@@ -92,5 +92,5 @@ Helpful aliases:
 ```
 # Start windows and panes at 1
 set -g base-index 1
-set -g status-right '#[fg=colour233,bg=colour245,bold] %A %-I:%M #[fg=colour255,bg=colour000] #(whoami)@#W'
+set -g status-right '#[fg=colour233,bg=colour245,bold] %A %-I:%M #[fg=colour255,bg=colour000] #(whoami)@#W '
 ```
