@@ -65,7 +65,7 @@ Helpful aliases:
     mkdir -p /tmp/log
     alias cd..='cd ..'
     alias ll='ls -alF'
-    alias lsa='ls -la'
+    alias lsa='ls -hla'
     alias la='ls -A'
     alias ls='ls -CF'
     alias cls='clear'
@@ -83,7 +83,7 @@ Helpful aliases:
     alias gl='git log'
     alias gp='git pull'
     alias gpsh='git push'
-    alias gss='git status -s'
+    alias gss='git status'
     alias gcnt='git ls-files | wc -l'
 ```
 
