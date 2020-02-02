@@ -13,7 +13,7 @@ export PATH=~/.npm-global/bin:$PATH
 	mkdir -p /tmp/log
     alias cd..='cd ..'
     alias ll='ls -alF'
-    alias lsa='ls -la'
+    alias lsa='ls -hla'
     alias la='ls -A'
     alias ls='ls -CF'
     alias cls='clear'
@@ -31,7 +31,7 @@ export PATH=~/.npm-global/bin:$PATH
     alias gl='git log'
     alias gp='git pull'
     alias gpsh='git push'
-    alias gss='git status -s'
+    alias gss='git status'
     alias gcnt='git ls-files | wc -l'
 
 # This is currently causing problems (fails when you run it anywhere that isn't a git project's root directory)
