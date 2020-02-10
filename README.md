@@ -71,6 +71,7 @@ Helpful aliases:
     alias cls='clear'
     alias n='nano -m'
     alias g++="g++-9"
+    alias kata="cd /Users/Bloumbs/dev/cw-katas"
 
 # Git aliases
     alias ga='git add'
