@@ -13,13 +13,15 @@ export PATH=~/.npm-global/bin:$PATH
 	mkdir -p /tmp/log
     alias cd..='cd ..'
     alias ll='ls -alF'
-    alias lsa='ls -hla'
+    alias lsa='colorls -lA --sd'
     alias la='ls -A'
     alias ls='ls -CF'
     alias cls='clear'
     alias n='nano -m'
     alias g++="g++-9"
     alias kata="cd /Users/Bloumbs/dev/cw-katas"
+    alias top="vtop --theme=wizard"
+    alias oldtop="/usr/bin/top"
 
 # Git aliases
     alias ga='git add'
