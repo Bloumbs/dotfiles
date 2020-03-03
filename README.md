@@ -22,15 +22,15 @@ General settings:
 ```
 set noswapfile " << at your own risk
 
-" Create Ctrl-/ or Cmd-/ bind in iTerm to send "^^"
-    vmap ^^ <plug>NERDCommenterToggle
-    nmap ^^ <plug>NERDCommenterToggle
+" Ctrl-l keybind to toggle comment on current line
+    vmap <C-l> <plug>NERDCommenterToggle
+    nmap <C-l> <plug>NERDCommenterToggle
 
 " CtrlP open in new tab
-let g:ctrlp_prompt_mappings = {
-    \ 'AcceptSelection("e")': ['<2-LeftMouse>'],
-    \ 'AcceptSelection("t")': ['<cr>'],
-    \ }
+    let g:ctrlp_prompt_mappings = {
+        \ 'AcceptSelection("e")': ['<2-LeftMouse>'],
+        \ 'AcceptSelection("t")': ['<cr>'],
+        \ }
 
 " Moving lines in Vim
 " Normal mode
@@ -65,7 +65,7 @@ Helpful aliases:
     mkdir -p /tmp/log
     alias cd..='cd ..'
     alias ll='ls -alF'
-    alias lsa='colorls -lA --sd'
+    alias lsa='ls -hla'
     alias la='ls -A'
     alias ls='ls -CF'
     alias cls='clear'
@@ -74,7 +74,7 @@ Helpful aliases:
     alias kata="cd /Users/Bloumbs/dev/cw-katas"
     alias top="vtop --theme=wizard"
     alias oldtop="/usr/bin/top"
-
+    alias vasm="/Users/Bloumbs/vasm/vasm6502_oldstyle"
 
 # Git aliases
     alias ga='git add'
