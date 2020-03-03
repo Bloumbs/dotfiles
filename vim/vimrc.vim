@@ -13,16 +13,16 @@
 " Initialize plugin system
     call plug#end()
 
-" Create Ctrl-/ or Cmd-/ bind in iTerm to send "^^"
-    vmap ^^ <plug>NERDCommenterToggle
-    nmap ^^ <plug>NERDCommenterToggle
+" Ctrl-l keybind to toggle comment on current line
+    vmap <C-l> <plug>NERDCommenterToggle
+    nmap <C-l> <plug>NERDCommenterToggle
 
 " General Vim settings
 	syntax on
     set noswapfile " << at your own risk
 	let mapleader=","
 	set autoindent
-	set tabstop=4
+    set tabstop=4
 	set shiftwidth=4
 	set dir=/tmp/
 	set number
@@ -145,7 +145,10 @@
 		autocmd BufNewFile,BufRead *.tsx set syntax=javascript
 
 	" Markup
-		inoremap <leader>< <esc>I<<esc>A><esc>yypa/<esc>O<tab>
+		inoremap <leader>< <esc>I<<esc>A><esc>yypa/<esc>O<tab
+
+    " Assembly
+        autocmd BufNewFile,BufRead *.asm,*.s set ft=asm68k
 
 
 " File and Window Management 
@@ -166,6 +169,9 @@
     nmap <c-s> :w<CR>
     vmap <c-s> <Esc><c-s>gv
     imap <c-s> <Esc><c-s>
+
+    nnoremap <silent> <leader>1 :%s/Test.assert_equals/print<CR>
+    nnoremap <silent> <leader>2 :%s/test.assert_equals/print<CR>
 
 " Return to the same line you left off at
 	augroup line_return
