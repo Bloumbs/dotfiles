@@ -2,13 +2,14 @@
     call plug#begin('~/.vim/plugged')
 
     Plug 'scrooloose/nerdcommenter'
-    Plug 'ctrlpvim/ctrlp.vim'
+    "Plug 'ctrlpvim/ctrlp.vim'
     Plug 'townk/vim-autoclose'
     Plug 'vim-python/python-syntax'
+    Plug 'mechatroner/rainbow_csv'
     "Plug 'numirias/semshi', {'do': ':UpdateRemotePlugins'}
-    Plug 'airblade/vim-gitgutter'
-    Plug 'mxw/vim-jsx'
-    Plug 'pangloss/vim-javascript'
+    "Plug 'airblade/vim-gitgutter'
+    "Plug 'mxw/vim-jsx'
+    "Plug 'pangloss/vim-javascript'
 
 " Initialize plugin system
     call plug#end()
@@ -47,20 +48,21 @@
     set statusline+=\ 
     
     colorscheme molokai
+    "hi Normal guibg=NONE ctermbg=NONE
     
     augroup FastEscape
         autocmd!
         au InsertEnter * set timeoutlen=0
-        au InsertLeave * set timeoutlen=1000
+        au InsertLeave * set timeoutlen=900
     augroup END
 
     :silent !echo -en "\033]0;%:t\a"
 
 " CtrlP open in new tab
-    let g:ctrlp_prompt_mappings = {
-        \ 'AcceptSelection("e")': ['<2-LeftMouse>'],
-        \ 'AcceptSelection("t")': ['<cr>'],
-        \ }
+    "let g:ctrlp_prompt_mappings = {
+        "\ 'AcceptSelection("e")': ['<2-LeftMouse>'],
+        "\ 'AcceptSelection("t")': ['<cr>'],
+        "\ }
                 
 	autocmd Filetype html setlocal sw=2 expandtab
 	autocmd Filetype javascript setlocal sw=4 expandtab
