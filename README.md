@@ -10,12 +10,11 @@
 
 Plugins:
 
+*some plugins I thought were causing a bit of slow down for me are commented out in vimrc.vim*
+
 - ['scrooloose/nerdcommenter'](https://github.com/preservim/nerdcommenter)
-- ['ctrlpvim/ctrlp.vim'](https://github.com/ctrlpvim/ctrlp.vim)
 - ['townk/vim-autoclose'](https://github.com/Townk/vim-autoclose)
-- ['airblade/vim-gitgutter'](https://github.com/airblade/vim-gitgutter)
-- ['mxw/vim-jsx'](https://github.com/mxw/vim-jsx)
-- ['pangloss/vim-javascript'](https://github.com/pangloss/vim-javascript)
+- ['mechatroner/rainbow_csv'](https://github.com/mechatroner/rainbow_csv)
 
 General settings:
 
@@ -25,12 +24,6 @@ set noswapfile " << at your own risk
 " Ctrl-l keybind to toggle comment on current line
     vmap <C-l> <plug>NERDCommenterToggle
     nmap <C-l> <plug>NERDCommenterToggle
-
-" CtrlP open in new tab
-    let g:ctrlp_prompt_mappings = {
-        \ 'AcceptSelection("e")': ['<2-LeftMouse>'],
-        \ 'AcceptSelection("t")': ['<cr>'],
-        \ }
 
 " Moving lines in Vim
 " Normal mode
