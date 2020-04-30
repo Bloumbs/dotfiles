@@ -9,7 +9,7 @@
     "Plug 'numirias/semshi', {'do': ':UpdateRemotePlugins'}
     "Plug 'airblade/vim-gitgutter'
     "Plug 'mxw/vim-jsx'
-    "Plug 'pangloss/vim-javascript'
+    Plug 'pangloss/vim-javascript'
 
 " Initialize plugin system
     call plug#end()

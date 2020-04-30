@@ -43,6 +43,7 @@ export PATH=~/.npm-global/bin:$PATH
 
 # Settings
 	export VISUAL=vim
+    export EDITOR=vim
 
     source ~/dotfiles/zsh/plugins/fixls.zsh
 
@@ -66,6 +67,11 @@ export PATH=~/.npm-global/bin:$PATH
  	  	ls;
  	}
  	#alias cd="c"
+
+    # "grepr" search function
+    grepr() {
+        grep -inRw -E "$1" "$2" --include=\*.{c,h,cpp,hpp,py,js,ts,html} --exclude-dir={.git,__pycache__,.vscode,bin,lib,include,node_modules}
+    }
 
 # For vim mappings: 
 	stty -ixon
