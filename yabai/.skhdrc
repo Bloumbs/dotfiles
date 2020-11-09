@@ -1,0 +1,25 @@
+# Focus navigation:
+#
+shift + alt - left : yabai -m window --focus prev
+shift + alt - right : yabai -m window --focus next
+
+
+# Window swap:
+#
+ctrl + shift - left : yabai -m window --swap prev
+ctrl + shift - right : yabai -m window --swap next
+
+
+# Expand panes:
+#
+ctrl + alt - left : yabai -m window --resize left:-50:0
+ctrl + alt - right : yabai -m window --resize right:50:0
+ctrl + alt - up : yabai -m window --resize top:0:-50
+ctrl + alt - down : yabai -m window --resize bottom:0:50
+
+
+# Toggles:
+ctrl + shift - f : yabai -m window --toggle float
+ctrl + shift - r : yabai -m window --toggle border_randomize
+ctrl + shift - g : yabai -m space --toggle padding;\
+                   yabai -m space --toggle gap
