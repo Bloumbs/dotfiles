@@ -2,7 +2,7 @@
     call plug#begin('~/.vim/plugged')
 
     Plug 'scrooloose/nerdcommenter'
-    "Plug 'ctrlpvim/ctrlp.vim'
+    Plug 'ctrlpvim/ctrlp.vim'
     Plug 'townk/vim-autoclose'
     Plug 'vim-python/python-syntax'
     Plug 'mechatroner/rainbow_csv'
@@ -35,6 +35,7 @@
     set title
     set ignorecase
     set smartcase
+    set background=dark
 
 " Status line
     set laststatus=2
@@ -47,7 +48,10 @@
     set statusline+=%c
     set statusline+=\ 
     
-    colorscheme molokai
+    "colorscheme gruvbox
+    autocmd BufEnter * colorscheme Monokai
+    "autocmd BufEnter *.c colorscheme Monokai
+    autocmd BufEnter *.py colorscheme molokai
     "hi Normal guibg=NONE ctermbg=NONE
     
     augroup FastEscape
@@ -59,10 +63,10 @@
     :silent !echo -en "\033]0;%:t\a"
 
 " CtrlP open in new tab
-    "let g:ctrlp_prompt_mappings = {
-        "\ 'AcceptSelection("e")': ['<2-LeftMouse>'],
-        "\ 'AcceptSelection("t")': ['<cr>'],
-        "\ }
+    let g:ctrlp_prompt_mappings = {
+        \ 'AcceptSelection("e")': ['<2-LeftMouse>'],
+        \ 'AcceptSelection("t")': ['<cr>'],
+        \ }
                 
 	autocmd Filetype html setlocal sw=2 expandtab
 	autocmd Filetype javascript setlocal sw=4 expandtab
