@@ -14,6 +14,7 @@ export PATH=~/.npm-global/bin:$PATH
     alias cd..='cd ..'
     alias ll='ls -alF'
     alias lsa='ls -hla'
+    alias lsr='ls -lR'
     alias la='ls -A'
     alias ls='ls -CF'
     alias cls='clear'
@@ -37,6 +38,7 @@ export PATH=~/.npm-global/bin:$PATH
     alias gpsh='git push'
     alias gss='git status'
     alias gcnt='git ls-files | wc -l'
+    alias lg='lazygit'
 
 # This is currently causing problems (fails when you run it anywhere that isn't a git project's root directory)
 # alias vs="v `git status --porcelain | sed -ne 's/^ M //p'`"
@@ -118,4 +120,5 @@ fi
 
 source ~/dotfiles/zsh/prompt.sh
 export PATH=$PATH:$HOME/dotfiles/utils
+export PATH=$PATH:$HOME/Qt/5.15.0/clang_64/bin
 export PATH=$PATH:~/scripts
